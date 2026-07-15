@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE TWO LIVES | Transform Your Destiny</title>
+    
+    <!-- Google Fonts for Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Gumroad Overlay Script for Seamless Checkout -->
+    <script src="https://gumroad.com/js/embed.js"></script>
+
+    <style>
+        /* Base Styling & Dark Luxury Theme */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Typography Highlights */
+        h1, h2, h3 {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+        }
+        .gold-text {
+            color: #d4af37;
+            background: linear-gradient(45deg, #b38728, #fbf5b7, #daaf38, #aa771c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: radial-gradient(circle at center, #111 0%, #050505 100%);
+            border-bottom: 1px solid #1a1a1a;
+            position: relative;
+        }
+        .hero-tagline {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #888;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(212, 175, 55, 0.1);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            color: #ccc;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        /* High-Converting CTA Button */
+        .cta-btn {
+            display: inline-block;
+            padding: 18px 45px;
+            font-family: 'Cinzel', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #000;
+            background: linear-gradient(45deg, #d4af37, #f9e8a2);
+            text-decoration: none;
+            border-radius: 4px;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            border: 1px solid transparent;
+        }
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+            background: linear-gradient(45deg, #f9e8a2, #d4af37);
+        }
+
+        /* Urgency Micro-copy */
+        .urgency-text {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #666;
+            letter-spacing: 1px;
+        }
+
+        /* Social Proof / Reviews Section */
+        .reviews-section {
+            padding: 80px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 2px;
+            background: #d4af37;
+            margin: 15px auto 0;
+        }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .review-card {
+            background: #0d0d0d;
+            border: 1px solid #1a1a1a;
+            padding: 30px;
+            border-radius: 4px;
+            position: relative;
+            transition: border 0.3s ease;
+        }
+        .review-card:hover {
+            border-color: #333;
+        }
+        .stars {
+            color: #d4af37;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+        .review-text {
+            color: #bbb;
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .reviewer-avatar {
+            width: 40px;
+            height: 40px;
+            background: #222;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: #d4af37;
+            border: 1px solid #d4af37;
+            font-size: 14px;
+        }
+        .reviewer-name {
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .reviewer-status {
+            font-size: 0.8rem;
+            color: #666;
+            display: block;
+        }
+
+        /* Footer Guarantee Section */
+        .footer-banner {
+            text-align: center;
+            padding: 60px 20px;
+            background: #0d0d0d;
+            border-top: 1px solid #1a1a1a;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1rem; }
+            .cta-btn { width: 100%; text-align: center; padding: 15px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-tagline">The Ultimate Blueprint for Transformation</div>
+        <h1>THE TWO LIVES</h1>
+        <p>The Difference Between Living by <span class="gold-text">Impulse</span> and Living by <span class="gold-text">Discipline</span>. A raw, psychological guide designed to break your loop of procrastination and reclaim your potential.</p>
+        
+        <!-- Gumroad Buy Now Link (Replace YOUR_PRODUCT_ID with your actual Gumroad link slug) -->
+        <a class="gumroad-button cta-btn" href="https://gumroad.com/l/YOUR_PRODUCT_ID?wanted=true" data-gumroad-overlay-checkout="true">GET THE EBOOK NOW</a>
+        
+        <div class="urgency-text">Instant PDF Access • Start Transforming Tonight</div>
+    </section>
+
+    <!-- SOCIAL PROOF / REVIEWS SECTION -->
+    <section class="reviews-section">
+        <h2 class="section-title">What Readers Are Saying</h2>
+        
+        <div class="reviews-grid">
+            <!-- Review 1 -->
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Page 2 hit me like a reality check I wasn't prepared for. Seeing the exact loop of 'Tomorrow' laid out made me close social media and actually start focusing."</p>
+                <div class="reviewer-info">
+                    <div class="reviewer-avatar">A</div>
+                    <div>
+                        <span class="reviewer-name">Aarav M.</span>
+                        <span class="reviewer-status">Verified Reader</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"The cinematic perspective of comparing who you are now versus who you could be in six months is insane. Best psychological approach to discipline I've read this year."</p>
+                <div class="reviewer-info">
+                    <div class="reviewer-avatar">R</div>
+                    <div>
+                        <span class="reviewer-name">Rohan K.</span>
+                        <span class="reviewer-status">Verified Reader</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"Short, direct, and zero fluff. The visual layouts and clear frameworks are exactly what modern high-performers need. Highly recommended."</p>
+                <div class="reviewer-info">
+                    <div class="reviewer-avatar">S</div>
+                    <div>
+                        <span class="reviewer-name">Sneha R.</span>
+                        <span class="reviewer-status">Verified Reader</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / LAST CHANCE CTA -->
+    <section class="footer-banner">
+        <p style="margin-bottom: 20px; color: #888;">Stop leaving your destiny to chance.</p>
+        <a class="gumroad-button cta-btn" href="https://gumroad.com/l/YOUR_PRODUCT_ID?wanted=true" data-gumroad-overlay-checkout="true">CLAIM YOUR COPY</a>
+    </section>
+
+</body>
+</html>
