@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-37LXZ221FX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-37LXZ221FX');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE TWO LIVES | Break Your Procrastination Loop</title>
@@ -14,7 +22,7 @@
     <style>
         :root {
             --bg-main: #050505;
-            --bg-card: rgba(15, 15, 15, 0.7);
+            --bg-card: rgba(15, 15, 15, 0.75);
             --border-color: rgba(255, 255, 255, 0.05);
             --text-primary: #ffffff;
             --text-secondary: #a1a1aa;
@@ -30,14 +38,13 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
             line-height: 1.7;
             overflow-x: hidden;
-            background-image: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.03) 0%, transparent 60%);
+            background-image: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.04) 0%, transparent 50%);
         }
 
-        /* Ambient Spotlight Mouse Effect */
         .spotlight {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             pointer-events: none;
-            background: radial-gradient(circle 400px at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.02), transparent 80%);
+            background: radial-gradient(circle 400px at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.025), transparent 80%);
             z-index: 999;
         }
 
@@ -45,154 +52,100 @@
         h1, h2, h3, .serif-font { font-family: 'Cinzel', serif; letter-spacing: 1px; }
         .gold-text { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        /* --- STAGE 1: THE REEL CONTINUATION (EMOTIONAL HOOK) --- */
+        /* --- 1. HOOK BLOCK --- */
         .hook-section {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            padding: 80px 0 40px 0;
             text-align: center;
-            padding: 60px 20px;
         }
         .hook-text {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 300;
             color: #e4e4e7;
-            max-width: 650px;
-            margin-bottom: 40px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInBlur 1.2s forwards cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .hook-section .delay-1 { animation-delay: 0.4s; }
-        .hook-section .delay-2 { animation-delay: 1.2s; }
-        .hook-section .delay-3 { animation-delay: 2.0s; }
-
-        @keyframes fadeInBlur {
-            to { opacity: 1; transform: translateY(0); filter: blur(0); }
+            margin-bottom: 20px;
         }
 
-        .scroll-indicator {
-            margin-top: 60px;
-            font-size: 12px;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            animation: bounce 2s infinite;
-        }
-        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-10px); } 60% { transform: translateY(-5px); } }
+        /* --- 2. THE FAST MIRROR GRID --- */
+        .fast-mirror-section { padding: 20px 0; }
+        .trajectory-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .trajectory-card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 24px; border-radius: 6px; }
+        .trajectory-card.before { border-left: 3px solid #ef4444; }
+        .trajectory-card.after { border-left: 3px solid #22c55e; }
+        .trajectory-card h3 { font-size: 1.1rem; margin-bottom: 12px; }
+        .story-list { list-style: none; font-size: 0.95rem; color: #d1d5db; }
+        .story-list li { margin-bottom: 8px; }
 
-        /* --- STAGE 2: THE MIRROR (BEFORE / AFTER) --- */
-        .section { padding: 100px 0; border-bottom: 1px solid var(--border-color); }
-        .center-heading { text-align: center; margin-bottom: 60px; }
-        .center-heading h2 { font-size: 2.2rem; margin-bottom: 16px; }
-        
-        .trajectory-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
-        .trajectory-card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 40px; border-radius: 8px; backdrop-filter: blur(10px); }
-        .trajectory-card.before { border-top: 3px solid #ef4444; }
-        .trajectory-card.after { border-top: 3px solid #22c55e; }
-        .trajectory-card h3 { font-size: 1.3rem; margin-bottom: 24px; }
-        .story-list { list-style: none; }
-        .story-list li { margin-bottom: 16px; font-size: 1.05rem; color: #d1d5db; display: flex; align-items: center; gap: 12px; }
-
-        /* --- STAGE 3: THE REVEAL & PRODUCT INTRO --- */
+        /* --- 3. IMMEDIATE BOOK PRESENTATION (PUSHED RIGHT UP) --- */
         .reveal-banner {
-            background: linear-gradient(180deg, transparent, rgba(212,175,55,0.03), transparent);
+            padding: 60px 0;
             text-align: center;
-            padding: 120px 24px;
         }
-        .reveal-banner h2 { font-size: 2.5rem; margin-bottom: 20px; }
-        .product-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 50px; align-items: center; margin-top: 60px; text-align: left; }
-        
+        .product-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 40px; align-items: center; text-align: left; }
         .mockup-side { display: flex; justify-content: center; perspective: 1000px; }
         .book-mockup {
-            width: 280px; height: 400px; box-shadow: 20px 20px 50px rgba(0,0,0,0.8);
+            width: 240px; height: 340px; box-shadow: 20px 20px 40px rgba(0,0,0,0.8);
             border-radius: 2px 6px 6px 2px; border-left: 4px solid var(--gold);
-            object-fit: cover; transition: transform 0.4s;
+            object-fit: cover;
         }
-        .book-mockup:hover { transform: rotateY(-5deg) scale(1.02); }
 
-        .features-list { margin: 24px 0; list-style: none; }
-        .features-list li { font-size: 14px; color: var(--text-secondary); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .features-list { margin: 16px 0; list-style: none; font-size: 13px; }
+        .features-list li { color: var(--text-secondary); margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
         .features-list li::before { content: '✔'; color: var(--gold); }
 
-        /* Premium Buttons */
         .btn-premium {
-            display: inline-block; padding: 18px 36px; background: linear-gradient(45deg, #d4af37, #f9e8a2);
-            color: #000; font-family: 'Cinzel', serif; font-weight: 700; font-size: 1.05rem;
+            display: inline-block; padding: 16px 32px; background: linear-gradient(45deg, #d4af37, #f9e8a2);
+            color: #000; font-family: 'Cinzel', serif; font-weight: 700; font-size: 1rem;
             text-decoration: none; letter-spacing: 2px; text-align: center; border-radius: 4px;
-            box-shadow: 0 10px 30px rgba(212,175,55,0.2); transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(212,175,55,0.2); transition: all 0.3s ease;
+            width: 100%;
         }
-        .btn-premium:hover { transform: translateY(-2px); box-shadow: 0 15px 40px rgba(212,175,55,0.4); }
+        .btn-premium:hover { transform: translateY(-1px); box-shadow: 0 12px 32px rgba(212,175,55,0.4); }
 
-        /* --- STAGE 4: FILTER (WHO IS IT FOR) --- */
-        .filter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        .filter-box { padding: 35px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); }
-        .filter-box.no { border-color: rgba(239, 68, 68, 0.15); }
-        .filter-box h3 { font-size: 1.25rem; margin-bottom: 20px; }
+        /* --- LOWER BACKWARD SECTIONS (SUPPORTING INFO) --- */
+        .section { padding: 60px 0; border-top: 1px solid var(--border-color); }
+        .center-heading { text-align: center; margin-bottom: 40px; }
+        .center-heading h2 { font-size: 1.8rem; }
+        
+        .filter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .filter-box { padding: 24px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-card); font-size: 0.95rem; }
+        .filter-box h3 { font-size: 1.15rem; margin-bottom: 12px; }
         .filter-box ul { list-style: none; }
-        .filter-box ul li { margin-bottom: 12px; font-size: 0.95rem; color: #d1d5db; }
+        .filter-box ul li { margin-bottom: 8px; }
 
-        /* --- STAGE 5: DENSITY EXPLANATION --- */
-        .inside-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-        .inside-card { border: 1px solid var(--border-color); padding: 24px; border-radius: 6px; background: rgba(255,255,255,0.01); }
-        .inside-card strong { color: var(--gold); display: block; margin-bottom: 8px; font-size: 1.1rem; }
-        .inside-card p { color: var(--text-secondary); font-size: 0.9rem; }
-
-        /* --- STAGE 6: CAROUSEL PREVIEW --- */
-        .carousel-track { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px; scroll-snap-type: x mandatory; }
-        .carousel-track::-webkit-scrollbar { height: 4px; }
-        .carousel-track::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
-        .preview-card { flex: 0 0 240px; scroll-snap-align: start; border: 1px solid var(--border-color); border-radius: 4px; overflow: hidden; height: 340px; }
+        .carousel-track { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 10px; }
+        .preview-card { flex: 0 0 200px; border: 1px solid var(--border-color); border-radius: 4px; overflow: hidden; height: 280px; }
         .preview-card img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* --- STAGE 7: CONVERSION-BOOSTING REVIEWS --- */
-        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-        .review-card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 24px; border-radius: 6px; }
-        .review-stars { color: var(--gold); margin-bottom: 10px; font-size: 12px; }
-        .review-text { font-style: italic; color: #d1d5db; font-size: 0.9rem; margin-bottom: 15px; }
-        .reviewer-name { font-weight: 600; font-size: 0.85rem; color: var(--gold); }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .review-card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 20px; border-radius: 6px; font-size: 0.9rem; }
+        .review-stars { color: var(--gold); margin-bottom: 6px; }
 
-        /* --- STAGE 8: AUTHOR SYSTEM --- */
-        .author-box { text-align: center; max-width: 650px; margin: 0 auto; }
-        .author-text { font-size: 1.1rem; color: #e4e4e7; font-style: italic; line-height: 1.8; margin-bottom: 20px; }
+        .faq-row { border-bottom: 1px solid var(--border-color); padding: 16px 0; }
+        .faq-q { font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; }
+        .faq-a { color: var(--text-secondary); font-size: 0.9rem; margin-top: 8px; display: none; }
 
-        /* --- STAGE 9: FAQ ACCORDION --- */
-        .faq-box { max-width: 650px; margin: 0 auto; }
-        .faq-row { border-bottom: 1px solid var(--border-color); padding: 18px 0; }
-        .faq-q { font-size: 1.05rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; }
-        .faq-a { color: var(--text-secondary); font-size: 0.95rem; margin-top: 10px; display: none; }
-
-        /* --- STAGE 10: STICKY BOTTOM ACTIONS --- */
         .sticky-bar {
-            position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(5,5,5,0.9);
+            position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(5,5,5,0.95);
             border-top: 1px solid var(--border-color); padding: 12px 24px; backdrop-filter: blur(15px);
             z-index: 998; display: flex; justify-content: space-between; align-items: center;
-            box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
         }
-        .sticky-left { display: flex; flex-direction: column; }
 
-        /* --- EXIT INTENT POPUP --- */
         .exit-modal {
-            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.95);
-            width: 90%; max-width: 400px; background: #0c0c0c; border: 1px solid var(--gold);
-            padding: 35px; border-radius: 6px; z-index: 1001; text-align: center;
-            visibility: hidden; opacity: 0; transition: all 0.25s ease;
+            position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 90%; max-width: 380px; background: #0c0c0c; border: 1px solid var(--gold);
+            padding: 30px; border-radius: 6px; z-index: 1001; text-align: center;
+            visibility: hidden; opacity: 0; transition: all 0.2s;
         }
-        .exit-modal.show { visibility: visible; opacity: 1; transform: translate(-50%, -50%) scale(1); }
-        .exit-overlay {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            background: rgba(0,0,0,0.85); z-index: 1000; visibility: hidden; opacity: 0; transition: opacity 0.25s;
-        }
+        .exit-modal.show { visibility: visible; opacity: 1; }
+        .exit-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); z-index: 1000; visibility: hidden; opacity: 0; }
         .exit-overlay.show { visibility: visible; opacity: 1; }
 
-        .trust-footer { text-align: center; padding: 40px 20px 100px 20px; font-size: 11px; color: #444; letter-spacing: 1px; }
+        .trust-footer { text-align: center; padding: 40px 20px 100px 20px; font-size: 11px; color: #444; }
 
         @media (max-width: 768px) {
-            .product-grid, .trajectory-grid, .filter-grid { grid-template-columns: 1fr; text-align: center; }
+            .product-grid, .trajectory-grid, .filter-grid { grid-template-columns: 1fr; }
+            .product-grid { text-align: center; }
             .product-grid div { display: flex; flex-direction: column; align-items: center; }
-            .hook-text { font-size: 1.4rem; }
+            .hook-text { font-size: 1.3rem; }
         }
     </style>
 </head>
@@ -200,95 +153,31 @@
 
     <div class="spotlight" id="spotlight"></div>
 
-    <div class="top-trust-bar">
-        ⚡ <span>Instant PDF Access</span> • Mobile Friendly Format • 20 Minute Pure Strategic Read
-    </div>
-
     <section class="hook-section">
-        <p class="hook-text delay-1">That quote on your screen wasn't the lesson.</p>
-        <p class="hook-text delay-2">This page is.</p>
-        <p class="hook-text delay-3" style="color: var(--text-secondary); font-size: 1.3rem;">If you've been saying "I'll start tomorrow" for months... you are currently losing the most important battle of your life.</p>
-        <div class="scroll-indicator">Scroll Down Slowly</div>
+        <div class="container">
+            <p class="hook-text">That quote on your screen wasn't the lesson. <strong>This page is.</strong></p>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; max-width:600px; margin: 0 auto;">If you've been saying "I'll start tomorrow" for months... you are currently losing the most important battle of your life.</p>
+        </div>
     </section>
 
-    <section class="section">
+    <section class="fast-mirror-section">
         <div class="container">
-            <div class="center-heading">
-                <h2 class="serif-font">Two Trajectories. One Room.</h2>
-                <p style="color: var(--text-secondary);">Imagine your life six months from now based on the choices you are making tonight.</p>
-            </div>
-            
             <div class="trajectory-grid">
                 <div class="trajectory-card before">
-                    <h3 class="serif-font" style="color:#ef4444;">If You Stay On Impulse</h3>
+                    <h3 class="serif-font" style="color:#ef4444;">Stay On Impulse</h3>
                     <ul class="story-list">
-                        <li>• Waking up late feeling tired every single day</li>
-                        <li>• Hours wasted scrolling through infinite feeds</li>
-                        <li>• Zero confidence when looking in the mirror</li>
-                        <li>• The heavy guilt of another broken promise</li>
+                        <li>• Waking up late feeling tired</li>
+                        <li>• Hours lost in endless scrolling</li>
+                        <li>• Guilt of another broken promise</li>
                     </ul>
                 </div>
                 <div class="trajectory-card after">
-                    <h3 class="serif-font" style="color:#22c55e;">If You Choose Discipline</h3>
+                    <h3 class="serif-font" style="color:#22c55e;">Choose Discipline</h3>
                     <ul class="story-list">
-                        <li>• Waking up early with absolute mental clarity</li>
-                        <li>• Consistency at the gym and a stronger body</li>
-                        <li>• Laser focus on your real, actual goals</li>
-                        <li>• Deep self-respect because you kept your word</li>
+                        <li>• Early mornings with absolute clarity</li>
+                        <li>• Consistency and a stronger body</li>
+                        <li>• Deep, unshakeable self-respect</li>
                     </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="mid-cta" style="text-align: center; background: rgba(212,175,55,0.02); padding: 50px 20px; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
-        <div class="container">
-            <h3 class="serif-font" style="margin-bottom:20px; font-size:1.4rem;">Stop leaving your trajectory to chance.</h3>
-            <a class="gumroad-button btn-premium" href="https://gumroad.com/l/YOUR_PRODUCT_ID?wanted=true" data-gumroad-overlay-checkout="true" style="padding:14px 30px; font-size:0.95rem;">GET INSTANT ACCESS</a>
-        </div>
-    </div>
-
-    <section class="section">
-        <div class="container">
-            <div class="filter-grid">
-                <div class="filter-box">
-                    <h3 class="serif-font" style="color:var(--gold);">This Book Is For You If:</h3>
-                    <ul>
-                        <li>✔ You are trapped in late-night phone dopamine cycles.</li>
-                        <li>✔ You want to start going to the gym but keep making excuses.</li>
-                        <li>✔ You are a student struggling with constant daily focus leaks.</li>
-                    </ul>
-                </div>
-                <div class="filter-box no">
-                    <h3 class="serif-font" style="color:#ef4444;">This Book Is NOT For You If:</h3>
-                    <ul>
-                        <li>✕ You are looking for a magical transformation shortcut overnight.</li>
-                        <li>✕ You want a 300-page book filled with boring theories and filler words.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <div class="center-heading">
-                <h2>Why Only 12 Pages?</h2>
-                <p style="color: var(--text-secondary); margin-top:10px;">Every page delivers exactly one direct, powerful shift. Zero unnecessary chapters. Zero fluff. Just a visual reading experience you can finish in 20 minutes and start practicing tonight.</p>
-            </div>
-            
-            <div class="inside-grid">
-                <div class="inside-card">
-                    <strong>1. The Dopamine Pivot</strong>
-                    <p>Why your brain chooses easy scrolling at 3 AM over your long term identity.</p>
-                </div>
-                <div class="inside-card">
-                    <strong>2. System Over Emotion</strong>
-                    <p>How to construct simple structural habits that work even when motivation completely dies.</p>
-                </div>
-                <div class="inside-card">
-                    <strong>3. The Compounding Trap</strong>
-                    <p>A brutal visual realization of what every small promise cost you in the last 6 months.</p>
                 </div>
             </div>
         </div>
@@ -296,28 +185,23 @@
 
     <section class="reveal-banner">
         <div class="container">
-            <p style="text-transform:uppercase; letter-spacing:3px; color:var(--gold); margin-bottom:10px; font-size:12px;">This isn't a fantasy. It's a daily choice.</p>
-            <h2 class="serif-font">That Is Why I Created The Two Lives.</h2>
-            
             <div class="product-grid">
                 <div class="mockup-side">
                     <img class="book-mockup" src="watermarked_img_12447304863961989369.png" alt="The Two Lives Cover"/>
                 </div>
                 <div>
-                    <h3 class="serif-font" style="font-size:1.8rem; margin-bottom:15px;">THE TWO LIVES</h3>
-                    <p style="color:var(--text-secondary); margin-bottom:20px;">A raw, hyper-focused visual blueprint built specifically to break your late-night procrastination loops and change your habits.</p>
+                    <h2 class="serif-font" style="font-size:1.8rem; margin-bottom:8px;">THE TWO LIVES</h2>
+                    <p style="color:var(--text-secondary); font-size:0.95rem; margin-bottom:15px;">A raw, 12-page visual blueprint built to break your late-night procrastination loops and change your compounding habits.</p>
                     
                     <ul class="features-list">
-                        <li>Instant High-Res PDF Delivery</li>
+                        <li>Instant High-Res PDF Download</li>
                         <li>Fully Formatted for Mobile Screens</li>
-                        <li>20 Minute Dense Visual Read</li>
-                        <li>Lifetime Access via Email</li>
+                        <li>20 Minute Dense Visual Read (Zero Fluff)</li>
                     </ul>
                     
-                    <div style="margin-top:25px; margin-bottom:10px;">
-                        <span style="font-size:1.8rem; font-weight:700; margin-right:10px;">Price: $0.99 Equivalent</span>
+                    <div style="margin: 20px 0 10px 0;">
+                        <span style="font-size: 1.8rem; font-weight: 700;">Price: $0.99 Equivalent</span>
                     </div>
-                    <p style="font-size: 12px; color: var(--text-secondary); margin-bottom: 20px;">*Automatically converted to your local currency at checkout.</p>
                     <a class="gumroad-button btn-premium" href="https://gumroad.com/l/YOUR_PRODUCT_ID?wanted=true" data-gumroad-overlay-checkout="true">READ IT TONIGHT</a>
                 </div>
             </div>
@@ -326,65 +210,70 @@
 
     <section class="section">
         <div class="container">
-            <div class="center-heading">
-                <h2>Look Inside The Blueprint</h2>
-            </div>
-            <div class="carousel-track">
-                <div class="preview-card"><img src="14160746100638226709.jpeg" alt="Page 2 Story Script"/></div>
-                <div class="preview-card"><img src="watermarked_img_15567081345579140354.png" alt="Page 3 Trajectory Grid"/></div>
+            <div class="filter-grid">
+                <div class="filter-box">
+                    <h3 class="serif-font" style="color:var(--gold);">This Book Is For You If:</h3>
+                    <ul>
+                        <li>✔ You are trapped in late-night phone dopamine loops.</li>
+                        <li>✔ You want to start gym routines but keep making excuses.</li>
+                    <li>✔ You struggle with maintaining consistency.</li>
+                    </ul>
+                </div>
+                <div class="filter-box" style="border-color: rgba(239, 68, 68, 0.15);">
+                    <h3 class="serif-font" style="color:#ef4444;">This Book Is NOT For:</h3>
+                    <ul>
+                        <li>✕ People looking for magical overnight shortcut hacks.</li>
+                        <li>✕ Readers looking for 300 pages of long corporate theories.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="section">
         <div class="container">
-            <div class="center-heading">
-                <h2>Feedback From Early Readers</h2>
+            <div class="center-heading"><h2>Look Inside The Blueprint</h2></div>
+            <div class="carousel-track">
+                <div class="preview-card"><img src="14160746100638226709.jpeg" alt="Page 2 Preview"/></div>
+                <div class="preview-card"><img src="watermarked_img_15567081345579140354.png" alt="Page 3 Preview"/></div>
             </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="center-heading"><h2>Feedback From Early Readers</h2></div>
             <div class="reviews-grid">
                 <div class="review-card">
                     <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Page 2 hit me like a massive reality check. Seeing the exact loop of 'Tomorrow' made me shut down my phone instantly."</p>
-                    <div class="reviewer-name">— Rohan Sharma</div>
+                    <p style="font-style:italic; margin-bottom:8px;">"Page 2 hit me like a massive reality check. Seeing the exact loop of 'Tomorrow' made me shut down my phone instantly."</p>
+                    <strong style="color:var(--gold); font-size:0.8rem;">— Rohan Sharma</strong>
                 </div>
                 <div class="review-card">
                     <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Short, direct, and incredibly visual. The dual layout style changes the entire experience. Best purchase I've made this year."</p>
-                    <div class="reviewer-name">— Devansh K.</diV>
+                    <p style="font-style:italic; margin-bottom:8px;">"Short, direct, and visual. The dual layout style changes the entire experience. Best purchase made this year."</p>
+                    <strong style="color:var(--gold); font-size:0.8rem;">— Devansh K.</strong>
                 </div>
                 <div class="review-card">
                     <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Zero fluff. I finished it in 20 minutes and the system completely shifted how I view my late night routines. Highly practical."</p>
-                    <div class="reviewer-name">— Alex Miller</div>
+                    <p style="font-style:italic; margin-bottom:8px;">"Zero filler chapters. Finished in 20 minutes and it completely shifted how I view my late night scrolling routines."</p>
+                    <strong style="color:var(--gold); font-size:0.8rem;">— Alex Miller</strong>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <div class="container">
-            <div class="author-box">
-                <p class="author-text">"I wrote this book after observing how small daily habits quietly shape the direction of our lives. My goal is to help readers build more discipline through simple ideas and practical action."</p>
-                <p class="serif-font" style="color:var(--gold);">Bharat Prajapati</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section" style="margin-bottom: 90px;">
+    <section class="section" style="margin-bottom: 60px;">
         <div class="container">
             <div class="center-heading"><h2>Frequently Asked Questions</h2></div>
-            <div class="faq-box">
+            <div class="faq-wrapper">
                 <div class="faq-row">
                     <div class="faq-q">What file format will I receive? <span>+</span></div>
-                    <div class="faq-a">You will receive a high-resolution print-ready premium digital PDF file sent directly to your email instantly after verification.</div>
+                    <div class="faq-a">You will receive a high-resolution premium digital PDF file sent directly to your email instantly after verification.</div>
                 </div>
                 <div class="faq-row">
                     <div class="faq-q">Is there a refund policy? <span>+</span></div>
-                    <div class="faq-a">Because digital product downloads grant immediate lifetime access to the frameworks, all sales are final. Look through the layouts above before securing access.</div>
-                </div>
-                <div class="faq-row">
-                    <div class="faq-q">Can I read it on my phone? <span>+</span></div>
-                    <div class="faq-a">Yes. The visual scale and typography are carefully designed to make reading smooth on mobile, tablet, and desktops.</div>
+                    <div class="faq-a">Because digital product downloads grant immediate lifetime access to the data, all sales are final.</div>
                 </div>
             </div>
         </div>
@@ -393,16 +282,16 @@
     <div class="sticky-bar">
         <div class="sticky-left">
             <span style="font-size:11px; color:var(--text-secondary); line-height:1;">Limited Offer</span>
-            <span style="font-size:1.25rem; font-weight:700;">LOCAL CURRENCY APPLIED</span>
+            <span style="font-size:1.15rem; font-weight:700;">LOCAL CURRENCY APPLIED</span>
         </div>
-        <a class="gumroad-button btn-premium" href="https://gumroad.com/l/YOUR_PRODUCT_ID?wanted=true" data-gumroad-overlay-checkout="true" style="padding:10px 24px; font-size:0.9rem;">SECURE ACCESS</a>
+        <a class="gumroad-button btn-premium" href="https://gumroad.com/l/YOUR_PRODUCT_ID?wanted=true" data-gumroad-overlay-checkout="true" style="padding:10px 20px; font-size:0.85rem; width:auto;">SECURE ACCESS</a>
     </div>
 
     <div class="exit-overlay" id="exitOverlay"></div>
     <div class="exit-modal" id="exitModal">
-        <h3 class="serif-font" style="color:var(--gold); margin-bottom:10px;">Don't close the loop empty-handed</h3>
-        <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:20px;">Invest in your transformation tonight instead of giving it away to minor screen impulses.</p>
-        <a class="gumroad-button btn-premium" href="https://gumroad.com/l/YOUR_PRODUCT_ID?wanted=true" data-gumroad-overlay-checkout="true" style="display:block; padding:12px; font-size:0.95rem;">CLAIM THE SYSTEM</a>
+        <h3 class="serif-font" style="color:var(--gold); margin-bottom:10px; font-size:1.2rem;">Don't close the loop empty-handed</h3>
+        <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:16px;">Invest in your transformation tonight instead of giving it away to minor screen impulses.</p>
+        <a class="gumroad-button btn-premium" href="https://gumroad.com/l/YOUR_PRODUCT_ID?wanted=true" data-gumroad-overlay-checkout="true" style="display:block; padding:12px;">CLAIM THE SYSTEM</a>
     </div>
 
     <div class="trust-footer">
@@ -410,13 +299,11 @@
     </div>
 
     <script>
-        // Track Mouse Glow Coordinates
         window.addEventListener('mousemove', e => {
             document.getElementById('spotlight').style.setProperty('--x', e.clientX + 'px');
             document.getElementById('spotlight').style.setProperty('--y', e.clientY + 'px');
         });
 
-        // Accordion Controls
         document.querySelectorAll('.faq-q').forEach(item => {
             item.addEventListener('click', () => {
                 const answer = item.nextElementSibling;
@@ -426,7 +313,6 @@
             });
         });
 
-        // Exit intent tracker
         let modalUsed = false;
         document.addEventListener('mouseleave', e => {
             if (e.clientY < 15 && !modalUsed) {
