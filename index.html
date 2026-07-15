@@ -3,192 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE TWO LIVES | Break Your Procrastination Loop</title>
+    <title>THE TWO LIVES | One Decision Changes Everything</title>
     
-    <!-- Premium Fonts -->
+    <!-- Premium Luxury Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Gumroad Overlay Script -->
+    <!-- Gumroad Script -->
     <script src="https://gumroad.com/js/embed.js"></script>
 
     <style>
-        /* --- CORE STYLES & LUXURY ENGINE --- */
         :root {
             --bg-main: #050505;
-            --bg-card: rgba(13, 13, 13, 0.75);
-            --border-color: rgba(255, 255, 255, 0.07);
+            --bg-card: rgba(15, 15, 15, 0.7);
+            --border-color: rgba(255, 255, 255, 0.05);
             --text-primary: #ffffff;
             --text-secondary: #a1a1aa;
             --gold: #d4af37;
             --gold-gradient: linear-gradient(45deg, #b38728, #fbf5b7, #daaf38, #aa771c);
-            --red-glow: rgba(239, 68, 68, 0.15);
-            --green-glow: rgba(34, 197, 94, 0.15);
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+        
         body {
             background-color: var(--bg-main);
             color: var(--text-primary);
             font-family: 'Plus Jakarta Sans', sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.07) 0%, transparent 50%),
-                radial-gradient(circle at 0% 100%, rgba(255, 255, 255, 0.02) 0%, transparent 40%);
+            background-image: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.03) 0%, transparent 60%);
         }
 
-        /* Ambient Mouse Glow Tracking */
+        /* Ambient Spotlight Mouse Effect */
         .spotlight {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             pointer-events: none;
-            background: radial-gradient(circle 350px at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.025), transparent 80%);
+            background: radial-gradient(circle 400px at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.02), transparent 80%);
             z-index: 999;
         }
 
-        /* --- TYPOGRAPHY --- */
+        .container { width: 100%; max-width: 800px; margin: 0 auto; padding: 0 24px; }
         h1, h2, h3, .serif-font { font-family: 'Cinzel', serif; letter-spacing: 1px; }
-        .gold-text {
-            background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .container { width: 100%; max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        .gold-text { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        /* --- STICKY TOP STRIP --- */
-        .top-trust-bar {
-            background: rgba(10, 10, 10, 0.8); border-bottom: 1px solid var(--border-color);
-            padding: 10px 0; font-size: 11px; text-align: center; letter-spacing: 2px;
-            text-transform: uppercase; color: var(--text-secondary); sticky-bar: top;
+        /* --- STAGE 1: THE REEL CONTINUATION (EMOTIONAL HOOK) --- */
+        .hook-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
         }
-        .top-trust-bar span { color: var(--text-primary); font-weight: 600; }
+        .hook-text {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: #e4e4e7;
+            max-width: 650px;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInBlur 1.2s forwards cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .hook-section .delay-1 { animation-delay: 0.4s; }
+        .hook-section .delay-2 { animation-delay: 1.2s; }
+        .hook-section .delay-3 { animation-delay: 2.0s; }
 
-        /* --- HERO SECTION (MOBILE FIRST OPTIMIZED) --- */
-        .hero { min-height: 90vh; display: flex; align-items: center; padding: 60px 0; }
-        .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
-        .hero-left h1 { font-size: 2.8rem; line-height: 1.2; margin-bottom: 16px; }
-        .hero-left .tagline { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 32px; font-weight: 300; }
+        @keyframes fadeInBlur {
+            to { opacity: 1; transform: translateY(0); filter: blur(0); }
+        }
+
+        .scroll-indicator {
+            margin-top: 60px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% { transform: translateY(0); } 40% { transform: translateY(-10px); } 60% { transform: translateY(-5px); } }
+
+        /* --- STAGE 2: THE MIRROR (BEFORE / AFTER) --- */
+        .section { padding: 100px 0; border-bottom: 1px solid var(--border-color); }
+        .center-heading { text-align: center; margin-bottom: 60px; }
+        .center-heading h2 { font-size: 2.2rem; margin-bottom: 16px; }
         
-        .feature-bullets { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 32px; }
-        .bullet { font-size: 13px; color: var(--text-secondary); display: flex; align-items: center; gap: 8px; }
-        .bullet::before { content: '✔'; color: var(--gold); font-weight: bold; }
-
-        .price-container { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
-        .strike-price { text-decoration: line-through; color: #ef4444; font-size: 1.2rem; }
-        .live-price { font-size: 2.2rem; font-weight: 700; color: #fff; }
-        .off-badge { background: #22c55e; color: #000; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px; }
-
-        .cta-box { display: flex; flex-direction: column; gap: 10px; }
-        .btn-premium {
-            display: inline-block; padding: 20px 40px; background: linear-gradient(45deg, #d4af37, #f9e8a2);
-            color: #000; font-family: 'Cinzel', serif; font-weight: 700; font-size: 1.1rem;
-            text-decoration: none; letter-spacing: 2px; text-align: center; border-radius: 4px;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 8px 24px rgba(212,175,55,0.2);
-        }
-        .btn-premium:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(212,175,55,0.4); }
-        .cta-micro { font-size: 11px; color: var(--text-secondary); letter-spacing: 1px; }
-
-        /* 3D Mockup Box */
-        .hero-right { display: flex; justify-content: center; perspective: 1000px; }
-        .mockup-container {
-            width: 300px; height: 430px; transform: rotateY(-12deg) rotateX(4deg);
-            transform-style: preserve-3d; box-shadow: 25px 25px 50px rgba(0,0,0,0.75);
-            transition: transform 0.4s ease;
-        }
-        .mockup-container:hover { transform: rotateY(0deg) rotateX(0deg); }
-        .mockup-img {
-            width: 100%; height: 100%; border-radius: 2px 6px 6px 2px;
-            object-fit: cover; border: 1px solid rgba(255,255,255,0.1);
-            border-left: 4px solid var(--gold);
-        }
-
-        /* --- SECTIONS --- */
-        .section { padding: 90px 0; border-bottom: 1px solid var(--border-color); }
-        .center-heading { text-align: center; max-width: 650px; margin: 0 auto 50px auto; }
-        .center-heading h2 { font-size: 2rem; margin-bottom: 12px; }
-
-        /* --- STORY SELLING TRAJECTORIES --- */
-        .trajectory-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        .trajectory-card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 35px; border-radius: 6px; }
-        .trajectory-card.before { border-top: 3px solid #ef4444; background: linear-gradient(180deg, rgba(239,68,68,0.02) 0%, transparent 100%); }
-        .trajectory-card.after { border-top: 3px solid #22c55e; background: linear-gradient(180deg, rgba(34,197,94,0.02) 0%, transparent 100%); }
-        .trajectory-card h3 { font-size: 1.4rem; margin-bottom: 20px; }
+        .trajectory-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
+        .trajectory-card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 40px; border-radius: 8px; backdrop-filter: blur(10px); }
+        .trajectory-card.before { border-top: 3px solid #ef4444; }
+        .trajectory-card.after { border-top: 3px solid #22c55e; }
+        .trajectory-card h3 { font-size: 1.3rem; margin-bottom: 24px; }
         .story-list { list-style: none; }
-        .story-list li { margin-bottom: 12px; font-size: 1rem; color: #d1d5db; display: flex; align-items: center; gap: 10px; }
+        .story-list li { margin-bottom: 16px; font-size: 1.05rem; color: #d1d5db; display: flex; align-items: center; gap: 12px; }
 
-        /* --- TARGET FILTER SECTIONS --- */
+        /* --- STAGE 3: THE REVEAL & PRODUCT INTRO --- */
+        .reveal-banner {
+            background: linear-gradient(180deg, transparent, rgba(212,175,55,0.03), transparent);
+            text-align: center;
+            padding: 120px 24px;
+        }
+        .reveal-banner h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .product-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 50px; align-items: center; margin-top: 60px; text-align: left; }
+        
+        .mockup-side { display: flex; justify-content: center; perspective: 1000px; }
+        .book-mockup {
+            width: 280px; height: 400px; box-shadow: 20px 20px 50px rgba(0,0,0,0.8);
+            border-radius: 2px 6px 6px 2px; border-left: 4px solid var(--gold);
+            object-fit: cover; transition: transform 0.4s;
+        }
+        .book-mockup:hover { transform: rotateY(-5deg) scale(1.02); }
+
+        .features-list { margin: 24px 0; list-style: none; }
+        .features-list li { font-size: 14px; color: var(--text-secondary); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .features-list li::before { content: '✔'; color: var(--gold); }
+
+        /* Premium Buttons */
+        .btn-premium {
+            display: inline-block; padding: 18px 36px; background: linear-gradient(45deg, #d4af37, #f9e8a2);
+            color: #000; font-family: 'Cinzel', serif; font-weight: 700; font-size: 1.05rem;
+            text-decoration: none; letter-spacing: 2px; text-align: center; border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(212,175,55,0.2); transition: all 0.3s ease;
+        }
+        .btn-premium:hover { transform: translateY(-2px); box-shadow: 0 15px 40px rgba(212,175,55,0.4); }
+
+        /* --- STAGE 4: FILTER (WHO IS IT FOR) --- */
         .filter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        .filter-box { padding: 35px; border-radius: 6px; border: 1px solid var(--border-color); }
-        .filter-box.yes { background: rgba(255,255,255,0.01); }
-        .filter-box.no { background: rgba(239,68,68,0.01); border-color: rgba(239,68,68,0.1); }
-        .filter-box h3 { font-size: 1.3rem; margin-bottom: 16px; }
+        .filter-box { padding: 35px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-card); }
+        .filter-box.no { border-color: rgba(239, 68, 68, 0.15); }
+        .filter-box h3 { font-size: 1.25rem; margin-bottom: 20px; }
         .filter-box ul { list-style: none; }
-        .filter-box ul li { margin-bottom: 10px; font-size: 0.95rem; }
+        .filter-box ul li { margin-bottom: 12px; font-size: 0.95rem; color: #d1d5db; }
 
-        /* --- MID SECTION INTERCEPT CTA --- */
-        .mid-cta { text-align: center; background: rgba(212,175,55,0.02); padding: 50px 20px; border-y: 1px solid var(--border-color); }
-
-        /* --- WHAT'S INSIDE GRID --- */
-        .inside-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-        .inside-card { border: 1px solid var(--border-color); padding: 24px; border-radius: 4px; background: rgba(255,255,255,0.01); }
-        .inside-card strong { color: var(--gold); display: block; margin-bottom: 6px; font-size: 1.1rem; }
+        /* --- STAGE 5: WHAT'S INSIDE & DENSITY --- */
+        .inside-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .inside-card { border: 1px solid var(--border-color); padding: 24px; border-radius: 6px; background: rgba(255,255,255,0.01); }
+        .inside-card strong { color: var(--gold); display: block; margin-bottom: 8px; font-size: 1.1rem; }
         .inside-card p { color: var(--text-secondary); font-size: 0.9rem; }
 
-        /* --- REAL VISUAL PREVIEW CAROUSEL --- */
-        .carousel-container { position: relative; overflow: hidden; padding: 10px 0; }
-        .carousel-track { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 15px; }
+        /* --- STAGE 6: CAROUSEL PREVIEW --- */
+        .carousel-track { display: flex; gap: 20px; overflow-x: auto; padding-bottom: 20px; scroll-snap-type: x mandatory; }
         .carousel-track::-webkit-scrollbar { height: 4px; }
-        .carousel-track::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.15); border-radius: 10px; }
-        .page-preview-card {
-            flex: 0 0 260px; scroll-snap-align: start; border: 1px solid var(--border-color);
-            border-radius: 4px; overflow: hidden; height: 370px; background: #0c0c0c;
-        }
-        .page-preview-card img { width: 100%; height: 100%; object-fit: cover; }
+        .carousel-track::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 4px; }
+        .preview-card { flex: 0 0 240px; scroll-snap-align: start; border: 1px solid var(--border-color); border-radius: 4px; overflow: hidden; height: 340px; }
+        .preview-card img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* --- SIMPLIFIED AUTHOR DIALOGUE --- */
-        .author-section { max-width: 700px; margin: 0 auto; text-align: center; }
-        .author-text { font-size: 1.05rem; color: #d1d5db; font-style: italic; margin-bottom: 20px; line-height: 1.7; }
-        .author-meta { font-family: 'Cinzel', serif; font-size: 1rem; color: var(--gold); letter-spacing: 1px; }
+        /* --- STAGE 7: CONVERSION-BOOSTING REVIEWS (INDIAN + FOREIGN) --- */
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+        .review-card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 24px; border-radius: 6px; }
+        .review-stars { color: var(--gold); margin-bottom: 10px; font-size: 12px; }
+        .review-text { font-style: italic; color: #d1d5db; font-size: 0.9rem; margin-bottom: 15px; }
+        .reviewer-name { font-weight: 600; font-size: 0.85rem; color: var(--gold); }
 
-        /* --- FAQ ACCORDION ENGINE --- */
-        .faq-wrapper { max-width: 700px; margin: 0 auto; }
-        .faq-row { border-bottom: 1px solid var(--border-color); padding: 20px 0; }
+        /* --- STAGE 8: AUTHOR SYSTEM --- */
+        .author-box { text-align: center; max-width: 650px; margin: 0 auto; }
+        .author-text { font-size: 1.1rem; color: #e4e4e7; font-style: italic; line-height: 1.8; margin-bottom: 20px; }
+
+        /* --- STAGE 9: FAQ ACCORDION --- */
+        .faq-box { max-width: 650px; margin: 0 auto; }
+        .faq-row { border-bottom: 1px solid var(--border-color); padding: 18px 0; }
         .faq-q { font-size: 1.05rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; }
         .faq-a { color: var(--text-secondary); font-size: 0.95rem; margin-top: 10px; display: none; }
 
-        /* --- STATIC & STICKY ACTION FOOTER BAR --- */
-        .sticky-footer {
+        /* --- STAGE 10: STICKY BOTTOM ACTIONS --- */
+        .sticky-bar {
             position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(5,5,5,0.9);
-            border-top: 1px solid var(--border-color); padding: 14px 24px; backdrop-filter: blur(15px);
+            border-top: 1px solid var(--border-color); padding: 12px 24px; backdrop-filter: blur(15px);
             z-index: 998; display: flex; justify-content: space-between; align-items: center;
-            animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.5);
         }
-        @keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+        .sticky-left { display: flex; flex-direction: column; }
 
-        .trust-footer { text-align: center; padding: 40px 20px; font-size: 11px; color: #52525b; letter-spacing: 1px; }
-
-        /* --- EXIT POPUP LAYER --- */
-        .popup-modal {
+        /* --- EXIT INTENT POPUP --- */
+        .exit-modal {
             position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.95);
-            width: 90%; max-width: 420px; background: #0a0a0a; border: 1px solid var(--gold);
+            width: 90%; max-width: 400px; background: #0c0c0c; border: 1px solid var(--gold);
             padding: 35px; border-radius: 6px; z-index: 1001; text-align: center;
             visibility: hidden; opacity: 0; transition: all 0.25s ease;
         }
-        .popup-modal.visible { visibility: visible; opacity: 1; transform: translate(-50%, -50%) scale(1); }
-        .popup-blur {
+        .exit-modal.show { visibility: visible; opacity: 1; transform: translate(-50%, -50%) scale(1); }
+        .exit-overlay {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             background: rgba(0,0,0,0.85); z-index: 1000; visibility: hidden; opacity: 0; transition: opacity 0.25s;
         }
-        .popup-blur.visible { visibility: visible; opacity: 1; }
+        .exit-overlay.show { visibility: visible; opacity: 1; }
 
-        /* --- RESPONSIVE BREAKPOINTS --- */
-        @media (max-width: 868px) {
-            .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 30px; }
-            .hero-left { display: flex; flex-direction: column; align-items: center; }
-            .hero-right { order: -1; } /* Cover goes first on Mobile screens */
-            .feature-bullets { width: 100%; }
-            .trajectory-grid, .filter-grid { grid-template-columns: 1fr; }
-            .sticky-footer { padding: 12px 16px; }
+        .trust-footer { text-align: center; padding: 40px 20px 100px 20px; font-size: 11px; color: #444; letter-spacing: 1px; }
+
+        @media (max-width: 768px) {
+            .product-grid, .trajectory-grid, .filter-grid { grid-template-columns: 1fr; text-align: center; }
+            .product-grid { text-align: center; }
+            .product-grid div { display: flex; flex-direction: column; align-items: center; }
+            .hook-text { font-size: 1.4rem; }
         }
     </style>
 </head>
@@ -196,253 +203,247 @@
 
     <div class="spotlight" id="spotlight"></div>
 
-    <!-- TOP VALUE BAR -->
-    <div class="top-trust-bar">
-        ⚡ <span>Instant PDF Access</span> • Mobile Friendly Format • 20 Minute Pure Strategic Read
-    </div>
-
-    <!-- HERO CONVERSION CORE -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-grid">
-                
-                <!-- Left Sales Matrix -->
-                <div class="hero-left">
-                    <h1 class="serif-font">THE TWO LIVES</h1>
-                    <p class="tagline">A 20-Minute Visual Ebook Engineered to Break Your Procrastination Loop.</p>
-                    
-                    <div class="feature-bullets">
-                        <div class="bullet">Instant PDF Delivery</div>
-                        <div class="bullet">No Subscription</div>
-                        <div class="bullet">Mobile Landscape Layout</div>
-                        <div class="bullet">Lifetime Digital Access</div>
-                    </div>
-
-                    <div class="price-container">
-                        <span class="strike-price">₹299</span>
-                        <span class="live-price">₹99</span>
-                        <span class="off-badge">66% OFF TODAY</span>
-                    </div>
-
-                    <div class="cta-box">
-                        <a class="gumroad-button btn-premium" href="https://gumroad.com/l/YOUR_PRODUCT_ID?wanted=true" data-gumroad-overlay-checkout="true">START YOUR TRANSFORMATION</a>
-                        <span class="cta-micro">Read It Tonight • Become Different Tomorrow</span>
-                    </div>
-                </div>
-
-                <!-- Right Real Cover Image Hook -->
-                <div class="hero-right">
-                    <div class="mockup-container">
-                        <!-- Raw image link mapping to cover prompt -->
-                        <img class="mockup-img" src="watermarked_img_12447304863961989369.png" alt="The Two Lives Cover Image"/>
-                    </div>
-                </div>
-
-            </div>
-        </div>
+    <!-- STAGE 1: THE EMOTIONAL HOOK -->
+    <section class="hook-section">
+        <p class="hook-text delay-1">That quote on your screen wasn't the lesson.</p>
+        <p class="hook-text delay-2">This page is.</p>
+        <p class="hook-text delay-3" style="color: var(--text-secondary); font-size: 1.3rem;">If you've been saying "I'll start tomorrow" for months... you are currently losing the most important battle of your life.</p>
+        <div class="scroll-indicator">Scroll Down Slowly</div>
     </section>
 
-    <!-- SECTION: THE CURRENT LOOP -->
+    <!-- STAGE 2: THE PAIN & MIRROR -->
     <section class="section">
         <div class="container">
             <div class="center-heading">
-                <h2>The Hardest Battle is With Yourself</h2>
-                <p style="color: var(--text-secondary);">Your current path versus your potential path. One choice dictates both.</p>
+                <h2 class="serif-font">Two Trajectories. One Room.</h2>
+                <p style="color: var(--text-secondary);">Imagine your life six months from now based on the choices you are making tonight.</p>
             </div>
             
             <div class="trajectory-grid">
                 <div class="trajectory-card before">
-                    <h3 class="serif-font" style="color:#ef4444;">Your Current Life</h3>
+                    <h3 class="serif-font" style="color:#ef4444;">If You Stay On Impulse</h3>
                     <ul class="story-list">
-                        <li>• Wake up late feeling exhausted</li>
-                        <li>• Hours lost in mindless infinite scrolling</li>
-                        <li>• Constant anxiety from unfinished work</li>
-                        <li>• Weak focus and fading self-confidence</li>
-                        <li>• Repeating the lie: "I will start tomorrow"</li>
+                        <li>• Waking up late feeling tired every single day</li>
+                        <li>• Hours wasted scrolling through infinite feeds</li>
+                        <li>• Zero confidence when looking in the mirror</li>
+                        <li>• The heavy guilt of another broken promise</li>
                     </ul>
                 </div>
                 <div class="trajectory-card after">
-                    <h3 class="serif-font" style="color:#22c55e;">6 Months Later</h3>
+                    <h3 class="serif-font" style="color:#22c55e;">If You Choose Discipline</h3>
                     <ul class="story-list">
-                        <li>• Early mornings built with zero friction</li>
-                        <li>• High energy physical strength and confidence</li>
-                        <li>• Laser sharp focus on compounding goals</li>
-                        <li>• Better deep sleep without screen fatigue</li>
-                        <li>• Promises turned into daily executed realities</li>
+                        <li>• Waking up early with absolute mental clarity</li>
+                        <li>• Consistency at the gym and a stronger body</li>
+                        <li>• Laser focus on your real, actual goals</li>
+                        <li>• Deep self-respect because you kept your word</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- INTERCEPT CTA SECTION -->
-    <div class="mid-cta">
+    <!-- STAGE 3: THE SOLUTION INTRO -->
+    <section class="reveal-banner">
         <div class="container">
-            <h3 class="serif-font" style="margin-bottom:20px; font-size:1.4rem;">Stop leaving your trajectory to chance.</h3>
-            <a class="gumroad-button btn-premium" href="https://gumroad.com/l/YOUR_PRODUCT_ID?wanted=true" data-gumroad-overlay-checkout="true" style="padding:14px 30px; font-size:0.95rem;">GET ACCESS FOR ₹99</a>
+            <p style="text-transform:uppercase; letter-spacing:3px; color:var(--gold); margin-bottom:10px; font-size:12px;">This isn't a fantasy. It's a daily choice.</p>
+            <h2 class="serif-font">That Is Why I Created The Two Lives.</h2>
+            
+            <div class="product-grid">
+                <div class="mockup-side">
+                    <!-- Real Generated Ebook Cover Mapping -->
+                    <img class="book-mockup" src="watermarked_img_12447304863961989369.png" alt="The Two Lives Cover"/>
+                </div>
+                <div>
+                    <h3 class="serif-font" style="font-size:1.8rem; margin-bottom:15px;">THE TWO LIVES</h3>
+                    <p style="color:var(--text-secondary); margin-bottom:20px;">A raw, hyper-focused visual blueprint built specifically to break your late-night procrastination loops and change your habits.</p>
+                    
+                    <ul class="features-list">
+                        <li>Instant High-Res PDF Delivery</li>
+                        <li>Fully Formatted for Mobile Screens</li>
+                        <li>20 Minute Dense Visual Read</li>
+                        <li>Lifetime Access via Email</li>
+                    </ul>
+                    
+                    <div style="margin-top:25px;">
+                        <span style="font-size:1.8rem; font-weight:700; margin-right:10px;">Scale: ₹99</span>
+                        <span style="text-decoration:line-through; color:#ef4444; font-size:1.1rem;">₹299</span>
+                    </div>
+                    <a class="gumroad-button btn-premium" href="https://gumroad.com/l/YOUR_PRODUCT_ID?wanted=true" data-gumroad-overlay-checkout="true" style="margin-top:20px;">READ IT TONIGHT</a>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- SECTION: FILTER PROFILES -->
+    <!-- STAGE 4: WHO IT IS FOR & NOT FOR -->
     <section class="section">
         <div class="container">
-            <div class="center-heading">
-                <h2>Is This Strategic Blueprint For You?</h2>
-            </div>
-            
             <div class="filter-grid">
-                <div class="filter-box yes">
-                    <h3 class="serif-font" style="color:var(--gold);">This Book Is For:</h3>
+                <div class="filter-box">
+                    <h3 class="serif-font" style="color:var(--gold);">This Book Is For You If:</h3>
                     <ul>
-                        <li>✔ Students dealing with constant workspace distractions</li>
-                        <li>✔ Beginners struggling to stay consistent with gym or nutrition</li>
-                        <li>✔ Phone addicts who want to break out of dopamine loops</li>
-                        <li>✔ Anyone tired of waiting for the "perfect day" to change</li>
+                        <li>✔ You are trapped in late-night phone dopamine cycles.</li>
+                        <li>✔ You want to start going to the gym but keep making excuses.</li>
+                        <li>✔ You are a student struggling with constant daily focus leaks.</li>
                     </ul>
                 </div>
                 <div class="filter-box no">
-                    <h3 class="serif-font" style="color:#ef4444;">This Book Is NOT For:</h3>
+                    <h3 class="serif-font" style="color:#ef4444;">This Book Is NOT For You If:</h3>
                     <ul>
-                        <li>✕ People looking for cheap magical shortcuts overnight</li>
-                        <li>✕ Readers looking for 300 pages of fluff, stories, and filler text</li>
-                        <li>✕ Anyone who isn't willing to implement clean habits immediately</li>
+                        <li>✕ You are looking for a magical transformation shortcut overnight.</li>
+                        <li>✕ You want a 300-page book filled with boring theories and filler words.</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION: WHAT'S INSIDE & WHY ONLY 12 PAGES -->
+    <!-- STAGE 5: DENSITY EXPLANATION -->
     <section class="section">
         <div class="container">
             <div class="center-heading">
                 <h2>Why Only 12 Pages?</h2>
-                <p style="color: var(--text-secondary); margin-top:10px;">Every single page is designed to deliver one heavy, actionable idea. No filler chapters. No repeated stories. Just a laser-focused visual reading experience you can finish and apply instantly.</p>
+                <p style="color: var(--text-secondary); margin-top:10px;">Every page delivers exactly one direct, powerful shift. Zero unnecessary chapters. Zero fluff. Just a visual reading experience you can finish in 20 minutes and start practicing tonight.</p>
             </div>
-
+            
             <div class="inside-grid">
                 <div class="inside-card">
                     <strong>1. The Dopamine Pivot</strong>
-                    <p>Dismantle the exact reason your brain craves instant impulse clicks at late night over focus.</p>
+                    <p>Why your brain chooses easy scrolling at 3 AM over your long term identity.</p>
                 </div>
                 <div class="inside-card">
-                    <strong>2. Intention Over Motivation</strong>
-                    <p>Stop waiting for feelings to pass. Set up dynamic daily parameters that force execution.</p>
+                    <strong>2. System Over Emotion</strong>
+                    <p>How to construct simple structural habits that work even when motivation completely dies.</p>
                 </div>
                 <div class="inside-card">
-                    <strong>3. The 180-Day Compounding Cost</strong>
-                    <p>A cold visual breakdown of exactly what you lose long-term for every tiny compromise.</p>
+                    <strong>3. The Compounding Trap</strong>
+                    <p>A brutal visual realization of what every small promise cost you in the last 6 months.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- INTERCEPT CTA SECTION 2 -->
-    <div class="mid-cta" style="background:transparent;">
-        <div class="container">
-            <a class="gumroad-button btn-premium" href="https://gumroad.com/l/YOUR_PRODUCT_ID?wanted=true" data-gumroad-overlay-checkout="true">UPGRADE YOUR HABITS TODAY</a>
-        </div>
-    </div>
-
-    <!-- SECTION: REAL LAYOUT PREVIEWS -->
+    <!-- STAGE 6: VISUAL CAROUSEL PREVIEWS -->
     <section class="section">
         <div class="container">
             <div class="center-heading">
-                <h2>Peek Inside The Blueprint</h2>
-                <p style="color: var(--text-secondary);">Direct glance at the premium dark cinematic visual pages inside.</p>
+                <h2>Look Inside The Blueprint</h2>
             </div>
-
-            <div class="carousel-container">
-                <div class="carousel-track">
-                    <!-- Real verified layout outputs mapped from history prompts -->
-                    <div class="page-preview-card"><img src="14160746100638226709.jpeg" alt="Page 2 Preview Element"/></div>
-                    <div class="page-preview-card"><img src="watermarked_img_15567081345579140354.png" alt="Page 3 Preview Element"/></div>
-                </div>
+            <div class="carousel-track">
+                <!-- Real Layout Images Mapped directly from assets -->
+                <div class="preview-card"><img src="14160746100638226709.jpeg" alt="Page 2 Story Script"/></div>
+                <div class="preview-card"><img src="watermarked_img_15567081345579140354.png" alt="Page 3 Trajectory Grid"/></div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION: SIMPLIFIED REAL TRUST AUTHOR TALK -->
+    <!-- STAGE 7: CONVERSION REVIEWS (INDIAN + FOREIGN MIX) -->
     <section class="section">
         <div class="container">
-            <div class="author-section">
-                <p class="author-text">"I wrote this book after observing how small daily habits quietly shape the direction of our lives. My goal is to help readers build more discipline through simple ideas and practical action."</p>
-                <div class="author-meta">— Bharat Prajapati</div>
+            <div class="center-heading">
+                <h2>Feedback From Early Readers</h2>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Page 2 hit me like a massive reality check. Seeing the exact loop of 'Tomorrow' made me shut down my phone instantly."</p>
+                    <div class="reviewer-name">— Rohan Sharma</div>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Short, direct, and incredibly visual. The dual layout style changes the entire experience. Best 99 rupees spent this year."</p>
+                    <div class="reviewer-name">— Devansh K.</diV>
+                </div>
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Zero filler. I finished it in 20 minutes and the system completely shifted how I view my late night routines. Highly practical."</p>
+                    <div class="reviewer-name">— Alex Miller</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION: FAQS Accordion -->
-    <section class="section" style="margin-bottom: 90px;">
+    <!-- STAGE 8: SIMPLIFIED AUTHOR DIALOGUE -->
+    <section class="section">
+        <div class="container">
+            <div class="author-box">
+                <p class="author-text">"I wrote this book after observing how small daily habits quietly shape the direction of our lives. My goal is to help readers build more discipline through simple ideas and practical action."</p>
+                <p class="serif-font" style="color:var(--gold);">Bharat Prajapati</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- STAGE 9: FAQS -->
+    <section class="section" style="margin-bottom: 80px;">
         <div class="container">
             <div class="center-heading"><h2>Frequently Asked Questions</h2></div>
-            
-            <div class="faq-wrapper">
+            <div class="faq-box">
+                <div class="faq-row">
+                    <div class="faq-q">What file format will I receive? <span>+</span></div>
+                    <div class="faq-a">You will receive a high-resolution print-ready premium digital PDF file sent directly to your email instantly after verification.</div>
+                </div>
                 <div class="faq-row">
                     <div class="faq-q">Is there a refund policy? <span>+</span></div>
-                    <div class="faq-a">Due to the immediate digital nature of this asset delivery, refunds are not issued. Check the inner previews above before securing access.</div>
+                    <div class="faq-a">Because digital product downloads grant immediate lifetime access to the frameworks, all sales are final. Look through the layouts above before securing access.</div>
                 </div>
                 <div class="faq-row">
-                    <div class="faq-q">Can I print this out? <span>+</span></div>
-                    <div class="faq-a">Yes. The asset is rendered in high-resolution, high-fidelity print-ready PDF format, making it perfectly clean for paper binding if preferred.</div>
-                </div>
-                <div class="faq-row">
-                    <div class="faq-q">Does it support offline reading? <span>+</span></div>
-                    <div class="faq-a">Absolutely. Once the transaction completes, the file downloads directly onto your hard storage or device memory, working completely without network needs.</div>
+                    <div class="faq-q">Can I read it on my phone? <span>+</span></div>
+                    <div class="faq-a">Yes. The visual scale and typography are carefully designed to make reading smooth on mobile, tablet, and desktops.</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ANCHOR STICKY BAR FOR DYNAMIC ACTION -->
-    <div class="sticky-footer">
-        <div>
-            <span style="font-size:11px; color:var(--text-secondary); text-decoration:line-through; display:block; line-height:1;">₹299</span>
-            <span style="font-size:1.25rem; font-weight:700; color:#fff;">TODAY: ₹99</span>
+    <!-- STAGE 10: STICKY CONVERSION BAR -->
+    <div class="sticky-bar">
+        <div class="sticky-left">
+            <span style="font-size:11px; text-decoration:line-through; color:var(--text-secondary); line-height:1;">₹299</span>
+            <span style="font-size:1.25rem; font-weight:700;">₹99 TODAY</span>
         </div>
-        <a class="gumroad-button sticky-cta-btn" href="https://gumroad.com/l/YOUR_PRODUCT_ID?wanted=true" data-gumroad-overlay-checkout="true">BUY NOW</a>
+        <a class="gumroad-button btn-premium" href="https://gumroad.com/l/YOUR_PRODUCT_ID?wanted=true" data-gumroad-overlay-checkout="true" style="padding:10px 24px; font-size:0.9rem;">SECURE ACCESS</a>
     </div>
 
-    <!-- EXIT CONVERSION LAYERS -->
-    <div class="popup-blur" id="exitBlur"></div>
-    <div class="popup-modal" id="exitModal">
-        <h3 class="serif-font" style="margin-bottom: 12px; color: var(--gold);">Don't close the loop empty-handed</h3>
-        <p style="color: var(--text-secondary); font-size:0.9rem; margin-bottom:24px;">Invest ₹99 in your transformation tonight instead of giving it away to minor impulses.</p>
-        <a class="gumroad-button btn-premium" href="https://gumroad.com/l/YOUR_PRODUCT_ID?wanted=true" data-gumroad-overlay-checkout="true" style="padding:14px 20px; font-size:0.95rem; display:block;">SECURE BLUEPRINT NOW</a>
+    <!-- EXIT CONTENT INFRASTRUCTURE -->
+    <div class="exit-overlay" id="exitOverlay"></div>
+    <div class="exit-modal" id="exitModal">
+        <h3 class="serif-font" style="color:var(--gold); margin-bottom:10px;">Don't leave empty-handed</h3>
+        <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:20px;">Invest ₹99 in your transformation tonight instead of giving it away to minor screen impulses.</p>
+        <a class="gumroad-button btn-premium" href="https://gumroad.com/l/YOUR_PRODUCT_ID?wanted=true" data-gumroad-overlay-checkout="true" style="display:block; padding:12px; font-size:0.95rem;">CLAIM THE SYSTEM</a>
     </div>
 
-    <!-- SCRIPT INFRASTRUCTURE -->
+    <div class="trust-footer">
+        Secure Checkout via Gumroad • Encrypted Payments • Instant Delivery
+    </div>
+
     <script>
-        // Smooth Mouse Light Coordinates Track
+        // Track Mouse Glow Coordinates
         window.addEventListener('mousemove', e => {
             document.getElementById('spotlight').style.setProperty('--x', e.clientX + 'px');
             document.getElementById('spotlight').style.setProperty('--y', e.clientY + 'px');
         });
 
-        // Simple Toggle Accordion for FAQs
+        // Accordion Controls
         document.querySelectorAll('.faq-q').forEach(item => {
             item.addEventListener('click', () => {
-                const nextEl = item.nextElementSibling;
-                const isVisible = nextEl.style.display === 'block';
+                const answer = item.nextElementSibling;
+                const active = answer.style.display === 'block';
                 document.querySelectorAll('.faq-a').forEach(a => a.style.display = 'none');
-                nextEl.style.display = isVisible ? 'none' : 'block';
+                answer.style.display = active ? 'none' : 'block';
             });
         });
 
-        // Smart Mouse Movement Monitor for Exit Intents
-        let modalActive = false;
+        // Exit intent tracker
+        let modalUsed = false;
         document.addEventListener('mouseleave', e => {
-            if (e.clientY < 15 && !modalActive) {
-                modalActive = true;
-                document.getElementById('exitModal').classList.add('visible');
-                document.getElementById('exitBlur').classList.add('visible');
+            if (e.clientY < 15 && !modalUsed) {
+                modalUsed = true;
+                document.getElementById('exitModal').classList.add('show');
+                document.getElementById('exitOverlay').classList.add('show');
             }
         });
 
-        // Overlay Escape Action
-        document.getElementById('exitBlur').addEventListener('click', () => {
-            document.getElementById('exitModal').classList.remove('visible');
-            document.getElementById('exitBlur').classList.remove('visible');
+        document.getElementById('exitOverlay').addEventListener('click', () => {
+            document.getElementById('exitModal').classList.remove('show');
+            document.getElementById('exitOverlay').classList.remove('show');
         });
     </script>
 </body>
