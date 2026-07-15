@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE TWO LIVES | One Decision Changes Everything</title>
+    <title>THE TWO LIVES | Break Your Procrastination Loop</title>
     
     <!-- Premium Luxury Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -149,7 +149,7 @@
         .preview-card { flex: 0 0 240px; scroll-snap-align: start; border: 1px solid var(--border-color); border-radius: 4px; overflow: hidden; height: 340px; }
         .preview-card img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* --- STAGE 7: CONVERSION-BOOSTING REVIEWS (INDIAN + FOREIGN) --- */
+        /* --- STAGE 7: CONVERSION-BOOSTING REVIEWS --- */
         .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
         .review-card { background: var(--bg-card); border: 1px solid var(--border-color); padding: 24px; border-radius: 6px; }
         .review-stars { color: var(--gold); margin-bottom: 10px; font-size: 12px; }
@@ -193,7 +193,6 @@
 
         @media (max-width: 768px) {
             .product-grid, .trajectory-grid, .filter-grid { grid-template-columns: 1fr; text-align: center; }
-            .product-grid { text-align: center; }
             .product-grid div { display: flex; flex-direction: column; align-items: center; }
             .hook-text { font-size: 1.4rem; }
         }
@@ -202,6 +201,11 @@
 <body>
 
     <div class="spotlight" id="spotlight"></div>
+
+    <!-- TOP VALUE BAR -->
+    <div class="top-trust-bar">
+        ⚡ <span>Instant PDF Access</span> • Mobile Friendly Format • 20 Minute Pure Strategic Read
+    </div>
 
     <!-- STAGE 1: THE EMOTIONAL HOOK -->
     <section class="hook-section">
@@ -242,39 +246,16 @@
         </div>
     </section>
 
-    <!-- STAGE 3: THE SOLUTION INTRO -->
-    <section class="reveal-banner">
+    <!-- INTERCEPT CTA SECTION -->
+    <div class="mid-cta" style="text-align: center; background: rgba(212,175,55,0.02); padding: 50px 20px;">
         <div class="container">
-            <p style="text-transform:uppercase; letter-spacing:3px; color:var(--gold); margin-bottom:10px; font-size:12px;">This isn't a fantasy. It's a daily choice.</p>
-            <h2 class="serif-font">That Is Why I Created The Two Lives.</h2>
-            
-            <div class="product-grid">
-                <div class="mockup-side">
-                    <!-- Real Generated Ebook Cover Mapping -->
-                    <img class="book-mockup" src="watermarked_img_12447304863961989369.png" alt="The Two Lives Cover"/>
-                </div>
-                <div>
-                    <h3 class="serif-font" style="font-size:1.8rem; margin-bottom:15px;">THE TWO LIVES</h3>
-                    <p style="color:var(--text-secondary); margin-bottom:20px;">A raw, hyper-focused visual blueprint built specifically to break your late-night procrastination loops and change your habits.</p>
-                    
-                    <ul class="features-list">
-                        <li>Instant High-Res PDF Delivery</li>
-                        <li>Fully Formatted for Mobile Screens</li>
-                        <li>20 Minute Dense Visual Read</li>
-                        <li>Lifetime Access via Email</li>
-                    </ul>
-                    
-                    <div style="margin-top:25px;">
-                        <span style="font-size:1.8rem; font-weight:700; margin-right:10px;">Scale: ₹99</span>
-                        <span style="text-decoration:line-through; color:#ef4444; font-size:1.1rem;">₹299</span>
-                    </div>
-                    <a class="gumroad-button btn-premium" href="https://gumroad.com/l/YOUR_PRODUCT_ID?wanted=true" data-gumroad-overlay-checkout="true" style="margin-top:20px;">READ IT TONIGHT</a>
-                </div>
-            </div>
+            <h3 class="serif-font" style="margin-bottom:20px; font-size:1.4rem;">Stop leaving your trajectory to chance.</h3>
+            <!-- Gumroad Dynamic Button -->
+            <a id="mid-cta-btn" class="gumroad-button btn-premium" href="https://gumroad.com/l/YOUR_PRODUCT_ID?wanted=true" data-gumroad-overlay-checkout="true" style="padding:14px 30px; font-size:0.95rem;">GET ACCESS FOR <span class="dyn-price">₹99</span></a>
         </div>
-    </section>
+    </div>
 
-    <!-- STAGE 4: WHO IT IS FOR & NOT FOR -->
+    <!-- STAGE 4: FILTER (WHO IS IT FOR) -->
     <section class="section">
         <div class="container">
             <div class="filter-grid">
@@ -322,6 +303,37 @@
         </div>
     </section>
 
+    <!-- STAGE 3: THE SOLUTION INTRO -->
+    <section class="reveal-banner">
+        <div class="container">
+            <p style="text-transform:uppercase; letter-spacing:3px; color:var(--gold); margin-bottom:10px; font-size:12px;">This isn't a fantasy. It's a daily choice.</p>
+            <h2 class="serif-font">That Is Why I Created The Two Lives.</h2>
+            
+            <div class="product-grid">
+                <div class="mockup-side">
+                    <img class="book-mockup" src="watermarked_img_12447304863961989369.png" alt="The Two Lives Cover"/>
+                </div>
+                <div>
+                    <h3 class="serif-font" style="font-size:1.8rem; margin-bottom:15px;">THE TWO LIVES</h3>
+                    <p style="color:var(--text-secondary); margin-bottom:20px;">A raw, hyper-focused visual blueprint built specifically to break your late-night procrastination loops and change your habits.</p>
+                    
+                    <ul class="features-list">
+                        <li>Instant High-Res PDF Delivery</li>
+                        <li>Fully Formatted for Mobile Screens</li>
+                        <li>20 Minute Dense Visual Read</li>
+                        <li>Lifetime Access via Email</li>
+                    </ul>
+                    
+                    <div style="margin-top:25px;">
+                        <span style="font-size:2.2rem; font-weight:700; margin-right:10px;" id="main-price-display">₹99</span>
+                        <span style="text-decoration:line-through; color:#ef4444; font-size:1.1rem;" id="main-strike-display">₹299</span>
+                    </div>
+                    <a id="hero-cta-btn" class="gumroad-button btn-premium" href="https://gumroad.com/l/YOUR_PRODUCT_ID?wanted=true" data-gumroad-overlay-checkout="true" style="margin-top:20px;">READ IT TONIGHT</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- STAGE 6: VISUAL CAROUSEL PREVIEWS -->
     <section class="section">
         <div class="container">
@@ -329,14 +341,13 @@
                 <h2>Look Inside The Blueprint</h2>
             </div>
             <div class="carousel-track">
-                <!-- Real Layout Images Mapped directly from assets -->
                 <div class="preview-card"><img src="14160746100638226709.jpeg" alt="Page 2 Story Script"/></div>
                 <div class="preview-card"><img src="watermarked_img_15567081345579140354.png" alt="Page 3 Trajectory Grid"/></div>
             </div>
         </div>
     </section>
 
-    <!-- STAGE 7: CONVERSION REVIEWS (INDIAN + FOREIGN MIX) -->
+    <!-- STAGE 7: CONVERSION REVIEWS -->
     <section class="section">
         <div class="container">
             <div class="center-heading">
@@ -350,7 +361,7 @@
                 </div>
                 <div class="review-card">
                     <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Short, direct, and incredibly visual. The dual layout style changes the entire experience. Best 99 rupees spent this year."</p>
+                    <p class="review-text">"Short, direct, and incredibly visual. The dual layout style changes the entire experience. Best purchase I've made this year."</p>
                     <div class="reviewer-name">— Devansh K.</diV>
                 </div>
                 <div class="review-card">
@@ -362,7 +373,7 @@
         </div>
     </section>
 
-    <!-- STAGE 8: SIMPLIFIED AUTHOR DIALOGUE -->
+    <!-- STAGE 8: AUTHOR DIALOGUE -->
     <section class="section">
         <div class="container">
             <div class="author-box">
@@ -373,7 +384,7 @@
     </section>
 
     <!-- STAGE 9: FAQS -->
-    <section class="section" style="margin-bottom: 80px;">
+    <section class="section" style="margin-bottom: 90px;">
         <div class="container">
             <div class="center-heading"><h2>Frequently Asked Questions</h2></div>
             <div class="faq-box">
@@ -396,18 +407,18 @@
     <!-- STAGE 10: STICKY CONVERSION BAR -->
     <div class="sticky-bar">
         <div class="sticky-left">
-            <span style="font-size:11px; text-decoration:line-through; color:var(--text-secondary); line-height:1;">₹299</span>
-            <span style="font-size:1.25rem; font-weight:700;">₹99 TODAY</span>
+            <span id="sticky-strike-display" style="font-size:11px; text-decoration:line-through; color:var(--text-secondary); line-height:1;">₹299</span>
+            <span id="sticky-price-display" style="font-size:1.25rem; font-weight:700;">₹99 TODAY</span>
         </div>
-        <a class="gumroad-button btn-premium" href="https://gumroad.com/l/YOUR_PRODUCT_ID?wanted=true" data-gumroad-overlay-checkout="true" style="padding:10px 24px; font-size:0.9rem;">SECURE ACCESS</a>
+        <a id="sticky-cta-btn" class="gumroad-button btn-premium" href="https://gumroad.com/l/YOUR_PRODUCT_ID?wanted=true" data-gumroad-overlay-checkout="true" style="padding:10px 24px; font-size:0.9rem;">SECURE ACCESS</a>
     </div>
 
-    <!-- EXIT CONTENT INFRASTRUCTURE -->
+    <!-- EXIT CONVERSION LAYERS -->
     <div class="exit-overlay" id="exitOverlay"></div>
     <div class="exit-modal" id="exitModal">
-        <h3 class="serif-font" style="color:var(--gold); margin-bottom:10px;">Don't leave empty-handed</h3>
-        <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:20px;">Invest ₹99 in your transformation tonight instead of giving it away to minor screen impulses.</p>
-        <a class="gumroad-button btn-premium" href="https://gumroad.com/l/YOUR_PRODUCT_ID?wanted=true" data-gumroad-overlay-checkout="true" style="display:block; padding:12px; font-size:0.95rem;">CLAIM THE SYSTEM</a>
+        <h3 class="serif-font" style="color:var(--gold); margin-bottom:10px;">Don't close the loop empty-handed</h3>
+        <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:20px;">Invest in your transformation tonight instead of giving it away to minor screen impulses.</p>
+        <a id="exit-cta-btn" class="gumroad-button btn-premium" href="https://gumroad.com/l/YOUR_PRODUCT_ID?wanted=true" data-gumroad-overlay-checkout="true" style="display:block; padding:12px; font-size:0.95rem;">CLAIM THE SYSTEM</a>
     </div>
 
     <div class="trust-footer">
@@ -415,6 +426,48 @@
     </div>
 
     <script>
+        // --- DYNAMIC CURRENCY & PRODUCT REDIRECTION MOTOR ---
+        // Gumroad specific currency links map
+        const pricingConfig = {
+            IN: { price: "₹99", strike: "₹299", ctaText: "GET ACCESS FOR ₹99", id: "YOUR_INR_PRODUCT_ID" },
+            US: { price: "$0.99", strike: "$2.99", ctaText: "GET ACCESS FOR $0.99", id: "YOUR_USD_PRODUCT_ID" },
+            DE: { price: "€0.99", strike: "€2.99", ctaText: "GET ACCESS FOR €0.99", id: "YOUR_EUR_PRODUCT_ID" },
+            // Default globally (USD)
+            DEFAULT: { price: "$0.99", strike: "$2.99", ctaText: "GET ACCESS FOR $0.99", id: "YOUR_USD_PRODUCT_ID" }
+        };
+
+        async function detectLocAndApplyPricing() {
+            try {
+                const response = await fetch('https://ipapi.co/json/');
+                const data = await response.json();
+                const country = data.country_code;
+                
+                // Fetch current config or drop back to default
+                const config = pricingConfig[country] || pricingConfig.DEFAULT;
+                
+                // Update text configurations across page layouts
+                document.getElementById('main-price-display').innerText = config.price;
+                document.getElementById('main-strike-display').innerText = config.strike;
+                document.getElementById('sticky-price-display').innerText = `${config.price} TODAY`;
+                document.getElementById('sticky-strike-display').innerText = config.strike;
+                document.getElementById('mid-cta-btn').innerHTML = config.ctaText;
+
+                // Dynamically swap Gumroad URLs based on country specific variant
+                const allCtaButtons = ['mid-cta-btn', 'hero-cta-btn', 'sticky-cta-btn', 'exit-cta-btn'];
+                allCtaButtons.forEach(btnId => {
+                    const btn = document.getElementById(btnId);
+                    if(btn) {
+                        btn.href = `https://gumroad.com/l/${config.id}?wanted=true`;
+                    }
+                });
+            } catch (error) {
+                console.log("Location engine failed, falling back to default.", error);
+            }
+        }
+        
+        // Execute dynamic checks immediately on parse completion
+        detectLocAndApplyPricing();
+
         // Track Mouse Glow Coordinates
         window.addEventListener('mousemove', e => {
             document.getElementById('spotlight').style.setProperty('--x', e.clientX + 'px');
